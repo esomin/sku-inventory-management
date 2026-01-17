@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: sku-inventory-management
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sku_inventory
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    open-in-view: false
+  
+  web:
+    cors:
+      allowed-origins: "http://localhost:5173"
+      allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+      allowed-headers: "*"
+      allow-credentials: true
+
+server:
+  port: 8080
