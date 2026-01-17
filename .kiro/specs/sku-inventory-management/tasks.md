@@ -6,20 +6,20 @@
 
 ## Tasks
 
-- [ ] 1. 백엔드 프로젝트 설정 및 데이터베이스 구성
+- [x] 1. 백엔드 프로젝트 설정 및 데이터베이스 구성
   - Spring Boot 프로젝트 생성 (Gradle, Java 21)
   - PostgreSQL Docker 설정 및 연결 구성
   - application.yml 설정 (데이터베이스, JPA, CORS)
   - _Requirements: 10.1, 10.2, 10.5, 11.1, 11.2_
 
-- [ ] 2. 백엔드 엔티티 및 리포지토리 구현
-  - [ ] 2.1 SKU 엔티티 클래스 작성
+- [-] 2. 백엔드 엔티티 및 리포지토리 구현
+  - [x] 2.1 SKU 엔티티 클래스 작성
     - @Entity, @Table 어노테이션 설정
     - 모든 필드 정의 (id, skuCode, productName, category, currentStock, safeStock, dailyConsumptionRate, createdAt, updatedAt)
     - 유효성 검증 어노테이션 추가 (@NotNull, @NotBlank, @Min)
     - _Requirements: 1.2, 11.4_
   
-  - [ ] 2.2 SKURepository 인터페이스 작성
+  - [-] 2.2 SKURepository 인터페이스 작성
     - JpaRepository 상속
     - 커스텀 쿼리 메서드 정의 (findBySkuCode, existsBySkuCode, findWithFilters)
     - @Query 어노테이션으로 복잡한 필터링 쿼리 작성
