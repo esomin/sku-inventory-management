@@ -64,8 +64,8 @@
     - **Property 13: 예상 품절일 계산 정확성**
     - **Validates: Requirements 8.1, 8.2, 8.3**
 
-- [ ] 5. 백엔드 컨트롤러 및 에러 핸들러 구현
-  - [ ] 5.1 SKUController 작성
+- [x] 5. 백엔드 컨트롤러 및 에러 핸들러 구현
+  - [x] 5.1 SKUController 작성
     - POST /api/skus (SKU 생성)
     - GET /api/skus/{id} (SKU 조회)
     - GET /api/skus (SKU 목록 조회, 검색/필터/정렬/페이징 지원)
@@ -74,7 +74,7 @@
     - @CrossOrigin 설정
     - _Requirements: 1.1, 2.1, 2.3, 3.1, 4.1, 6.1, 6.2, 10.3, 10.5_
   
-  - [ ] 5.2 GlobalExceptionHandler 작성
+  - [x] 5.2 GlobalExceptionHandler 작성
     - @RestControllerAdvice 설정
     - SKUNotFoundException 핸들러 (404)
     - DuplicateSKUException 핸들러 (409)
