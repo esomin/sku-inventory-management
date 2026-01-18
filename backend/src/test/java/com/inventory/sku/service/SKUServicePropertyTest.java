@@ -127,6 +127,9 @@ public class SKUServicePropertyTest {
                 assertEquals("업데이트된 안전 재고가 일치해야 합니다",
                                 updateRequest.getSafeStock(), retrieved.getSafeStock());
 
+                // 수정 시간이 업데이트되어야 함ateRequest.getDailyConsumptionRate(),
+                // retrieved.getDailyConsumptionRate(), 0.001);
+
                 // 수정 시간이 업데이트되어야 함
                 assertNotNull("수정 시간이 업데이트되어야 합니다", retrieved.getUpdatedAt());
 
