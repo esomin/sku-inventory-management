@@ -82,7 +82,7 @@
     - 일반 Exception 핸들러 (500)
     - _Requirements: 10.4, 11.3_
   
-  - [ ]* 5.3 속성 테스트 작성 - SKU CRUD 라운드트립
+  - [x] 5.3 속성 테스트 작성 - SKU CRUD 라운드트립
     - **Property 1: SKU 생성 라운드트립**
     - **Property 5: SKU 업데이트 라운드트립**
     - **Property 6: SKU 삭제 효과**
