@@ -25,20 +25,20 @@
     - @Query 어노테이션으로 복잡한 필터링 쿼리 작성
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 3. 백엔드 DTO 및 예외 클래스 구현
-  - [ ] 3.1 DTO 클래스 작성
+- [x] 3. 백엔드 DTO 및 예외 클래스 구현
+  - [x] 3.1 DTO 클래스 작성
     - SKURequest DTO (유효성 검증 어노테이션 포함)
     - SKUResponse DTO
     - ErrorResponse DTO
     - _Requirements: 1.2, 2.2_
   
-  - [ ] 3.2 커스텀 예외 클래스 작성
+  - [x] 3.2 커스텀 예외 클래스 작성
     - SKUNotFoundException
     - DuplicateSKUException
     - _Requirements: 1.3, 2.4, 3.3, 4.2_
 
-- [ ] 4. 백엔드 서비스 레이어 구현
-  - [ ] 4.1 SKUService 인터페이스 및 구현체 작성
+- [x] 4. 백엔드 서비스 레이어 구현
+  - [x] 4.1 SKUService 인터페이스 및 구현체 작성
     - createSKU 메서드 (중복 체크 포함)
     - getSKUById 메서드
     - getAllSKUs 메서드 (페이징 및 필터링 지원)
@@ -46,12 +46,12 @@
     - deleteSKU 메서드
     - _Requirements: 1.1, 1.3, 2.1, 2.3, 3.1, 3.2, 4.1_
   
-  - [ ] 4.2 품절 위험 계산 로직 구현
+  - [x] 4.2 품절 위험 계산 로직 구현
     - calculateRiskLevel 메서드
     - 재고 비율에 따른 위험 수준 계산 (높음/중간/낮음)
     - _Requirements: 7.1, 7.2, 7.3, 7.4_
   
-  - [ ] 4.3 예상 품절일 계산 로직 구현
+  - [x] 4.3 예상 품절일 계산 로직 구현
     - calculateExpectedShortageDate 메서드
     - 선형 계산 로직 구현 ((현재재고 - 안전재고) / 일일소비량)
     - _Requirements: 8.1, 8.2, 8.3_
