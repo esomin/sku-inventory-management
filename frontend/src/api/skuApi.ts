@@ -1,4 +1,5 @@
 import axios, { AxiosError } from 'axios';
+import { toast } from 'sonner';
 import type { SKURequest, SKUResponse, PageResponse } from '../types/sku';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
@@ -14,38 +15,39 @@ const apiClient = axios.create({
 });
 
 /**
- * Error interceptor for handling API errors
- * Validates: Requirements 1.1, 2.1, 2.3, 3.1, 4.1
+ * Error interceptor for handling API errors with toast notifications
+ * Validates: Requirements 9.3, 9.4, 10.4
  */
 apiClient.interceptors.response.use(
     (response) => response,
-    (error: AxiosError) => {
+    (error: AxiosError<{ message?: string }>) => {
         if (error.response) {
             // Server responded with error status
             const { status, data } = error.response;
+            const message = data?.message || '알 수 없는 오류가 발생했습니다';
 
             switch (status) {
                 case 404:
-                    console.error('Resource not found:', data);
+                    toast.error('요청한 리소스를 찾을 수 없습니다');
                     break;
                 case 409:
-                    console.error('Duplicate SKU code:', data);
+                    toast.error('중복된 SKU 코드입니다');
                     break;
                 case 400:
-                    console.error('Bad request:', data);
+                    toast.error(message || '잘못된 요청입니다');
                     break;
                 case 500:
-                    console.error('Server error:', data);
+                    toast.error('서버 오류가 발생했습니다');
                     break;
                 default:
-                    console.error('API error:', data);
+                    toast.error('오류가 발생했습니다');
             }
         } else if (error.request) {
             // Request made but no response received
-            console.error('Network error: Unable to reach server');
+            toast.error('서버에 연결할 수 없습니다');
         } else {
             // Error in request setup
-            console.error('Request error:', error.message);
+            toast.error('요청 중 오류가 발생했습니다');
         }
 
         return Promise.reject(error);
