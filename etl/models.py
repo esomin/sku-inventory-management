@@ -15,7 +15,7 @@ class PriceData:
     """Price data collected from e-commerce sites."""
     product_name: str
     price: float
-    source: str  # '다나와' or '에누리'
+    source: str  # '다나와'
     source_url: str
     recorded_at: datetime
     price_change_pct: Optional[float] = None

@@ -18,8 +18,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 
 **예시:**
 - 소스 A (다나와): "ASUS Dual 지포스 RTX 4070 SUPER O12G OC D6X 12GB"
-- 소스 B (에누리): "(에이수스) RTX 4070 슈퍼 D6X 12GB Dual"
-- 소스 C (Reddit): "Got a great deal on a 4070 Super Dual today"
+- 소스 B (Reddit): "Got a great deal on a 4070 Super Dual today"
 
 **정규화 결과:** `{BRAND: "ASUS", CHIPSET: "RTX 4070 Super", LINEUP: "Dual", VRAM: "12GB", OC: true}`
 
@@ -81,7 +80,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - price (DECIMAL)
     - recorded_at (TIMESTAMP)
     - source_url (VARCHAR)
-    - source_name (VARCHAR) - "다나와" 또는 "에누리"
+    - source_name (VARCHAR) - "다나와"
     - price_change_pct (DECIMAL) - 전주 대비 가격 변동률
     - 인덱스: (sku_id, recorded_at), (recorded_at)
     - _Requirements: 8.2, 5.1, 5.2_
@@ -122,25 +121,18 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 재시도 로직 구현 (최대 3회)
     - _Requirements: 8.5_
 
-- [ ] 5. Extract 모듈 - 가격 크롤러
-  - [ ] 5.1 다나와 크롤러 구현
+- [x] 5. Extract 모듈 - 가격 크롤러
+  - [x] 5.1 다나와 크롤러 구현
     - extractors/danawa_crawler.py 작성
     - RTX 4070 시리즈 제품 검색 및 가격 수집
     - 최근 3개월 가격 추이 데이터 수집
     - 에러 핸들링 및 로깅
-    - _Requirements: 3.1, 3.3, 3.4, 3.5_
+    - _Requirements: 3.1, 3.2, 3.3, 3.4_
   
-  - [ ] 5.2 에누리 크롤러 구현
-    - extractors/enuri_crawler.py 작성
-    - RTX 4070 시리즈 제품 검색 및 가격 수집
-    - 최근 3개월 가격 추이 데이터 수집
-    - 에러 핸들링 및 로깅
-    - _Requirements: 3.2, 3.3, 3.4, 3.5_
-  
-  - [ ] 5.3 크롤러 테스트
+  - [x] 5.2 크롤러 테스트
     - 실제 웹사이트에서 데이터 수집 테스트
     - 파싱 정확도 검증
-    - _Requirements: 3.1, 3.2_
+    - _Requirements: 3.1_
 
 - [ ] 6. Extract 모듈 - Reddit 수집기
   - [ ] 6.1 Reddit RSS 피드 수집기 구현
@@ -167,7 +159,6 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
   
   - [ ] 7.2 정규화 테스트 케이스 작성
     - 다나와 제품명 정규화 테스트
-    - 에누리 제품명 정규화 테스트
     - Reddit 텍스트 정규화 테스트
     - 엣지 케이스 테스트 (약어, 오타 등)
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6_
@@ -316,7 +307,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - components/PriceChart.tsx 작성
     - Recharts 또는 Chart.js 사용
     - 최근 3개월 가격 추이 라인 차트
-    - 다나와/에누리 데이터 별도 라인으로 표시
+    - 다나와 데이터 표시
     - 호버 시 상세 정보 툴팁
     - 날짜 범위 필터
     - _Requirements: 10.1, 10.2, 10.3, 10.4_
@@ -367,7 +358,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 ### Phase 5: 통합 및 테스트
 
 - [ ] 18. 엔드투엔드 통합
-  - [-] 18.1 전체 시스템 통합 테스트
+  - [ ] 18.1 전체 시스템 통합 테스트
     - PostgreSQL Docker 컨테이너 시작
     - Spring Boot 백엔드 시작
     - Python ETL 스케줄러 시작
@@ -378,7 +369,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 가격 크롤링 → 정규화 → 적재 → 프론트엔드 표시
     - Reddit 수집 → 감성 분석 → 적재 → 대시보드 표시
     - 위험 지수 계산 → 알림 생성 → 프론트엔드 알림
-    - _Requirements: 3.1, 3.2, 4.1, 4.2, 7.1, 12.1_
+    - _Requirements: 3.1, 4.1, 4.2, 7.1, 12.1_
   
   - [ ] 18.3 알람 조건 시나리오 테스트
     - "5070 release date" 키워드 빈도 50% 상승 시뮬레이션

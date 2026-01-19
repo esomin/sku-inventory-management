@@ -21,7 +21,7 @@ Creates the `price_logs` table for storing historical GPU price data:
 - `price` (DECIMAL(10,2)) - Price in KRW
 - `recorded_at` (TIMESTAMP) - When the price was recorded from source
 - `source_url` (VARCHAR(500)) - URL of the source page
-- `source_name` (VARCHAR(50)) - Source name (다나와 or 에누리)
+- `source_name` (VARCHAR(50)) - Source name (다나와)
 - `price_change_pct` (DECIMAL(5,2)) - Week-over-week price change percentage
 - `created_at` (TIMESTAMP) - When the record was inserted
 

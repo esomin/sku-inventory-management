@@ -2,7 +2,7 @@
 
 ## Introduction
 
-GPU 가격 모니터링 ETL 시스템은 기존 SKU 재고 관리 시스템을 GPU 제품에 특화하여 확장하고, 다나와/에누리 가격 데이터 및 Reddit 커뮤니티 신호를 수집·분석하여 재고 가치 하락 위험을 조기에 감지하는 시스템입니다. 
+GPU 가격 모니터링 ETL 시스템은 기존 SKU 재고 관리 시스템을 GPU 제품에 특화하여 확장하고, 다나와 가격 데이터 및 Reddit 커뮤니티 신호를 수집·분석하여 재고 가치 하락 위험을 조기에 감지하는 시스템입니다. 
 
 본 시스템은 **RTX 4070 시리즈**(4070, 4070 Super, 4070 Ti, 4070 Ti Super)로 범위를 한정합니다. 이 시리즈는 현재 시장에서 가장 활발하게 거래되는 메인스트림 제품이며, 새로운 'Super' 모델 출시나 가격 인하 시 기존 일반 모델의 재고 가치 변화를 비교 분석하기에 가장 적합한 표준 데이터입니다.
 
@@ -12,7 +12,7 @@ GPU 가격 모니터링 ETL 시스템은 기존 SKU 재고 관리 시스템을 G
 
 - **ETL_System**: 가격 및 커뮤니티 데이터를 추출(Extract), 변환(Transform), 적재(Load)하는 Python 기반 애플리케이션
 - **SKU_Entity**: 기존 재고 관리 시스템의 제품 엔티티 (Spring Boot 백엔드)
-- **Price_Crawler**: 다나와/에누리 웹사이트에서 GPU 가격 데이터를 수집하는 크롤러 모듈
+- **Price_Crawler**: 다나와 웹사이트에서 GPU 가격 데이터를 수집하는 크롤러 모듈
 - **Reddit_Collector**: Reddit RSS 피드에서 GPU 관련 커뮤니티 신호를 수집하는 모듈
 - **Product_Normalizer**: 제품명을 파싱하여 Brand, Chipset, VRAM, OC 여부 등을 추출하는 변환 모듈
 - **Risk_Calculator**: 가격 변동률과 커뮤니티 감성을 기반으로 재고 위험 지수를 계산하는 모듈
@@ -49,15 +49,14 @@ GPU 가격 모니터링 ETL 시스템은 기존 SKU 재고 관리 시스템을 G
 
 ### Requirement 3: 가격 데이터 크롤링
 
-**User Story:** 가격 분석가로서, 다나와와 에누리에서 RTX 4070 시리즈 GPU의 현재가와 최근 3개월 가격 추이를 자동으로 수집하고 싶습니다. 이를 통해 시장 가격 동향을 파악할 수 있습니다.
+**User Story:** 가격 분석가로서, 다나와에서 RTX 4070 시리즈 GPU의 현재가와 최근 3개월 가격 추이를 자동으로 수집하고 싶습니다. 이를 통해 시장 가격 동향을 파악할 수 있습니다.
 
 #### Acceptance Criteria
 
 1. WHEN scheduled, THE Price_Crawler SHALL fetch current prices from 다나와 website
-2. WHEN scheduled, THE Price_Crawler SHALL fetch current prices from 에누리 website
-3. WHEN fetching prices, THE Price_Crawler SHALL retrieve price history for the last 3 months
-4. WHEN price data is fetched, THE Price_Crawler SHALL include the source URL
-5. WHEN a crawling error occurs, THE Price_Crawler SHALL log the error and continue with remaining products
+2. WHEN fetching prices, THE Price_Crawler SHALL retrieve price history for the last 3 months
+3. WHEN price data is fetched, THE Price_Crawler SHALL include the source URL
+4. WHEN a crawling error occurs, THE Price_Crawler SHALL log the error and continue with remaining products
 
 ### Requirement 4: Reddit 커뮤니티 신호 수집
 
@@ -134,7 +133,7 @@ GPU 가격 모니터링 ETL 시스템은 기존 SKU 재고 관리 시스템을 G
 #### Acceptance Criteria
 
 1. WHEN a user selects a GPU product, THE Frontend SHALL display a line chart of price history for the last 3 months
-2. THE Frontend SHALL show prices from both 다나와 and 에누리 as separate lines on the chart
+2. THE Frontend SHALL show prices from 다나와
 3. WHEN hovering over a data point, THE Frontend SHALL display the exact price, date, and source
 4. THE Frontend SHALL allow filtering by date range
 
