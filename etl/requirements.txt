@@ -1,0 +1,26 @@
+# Web scraping and HTTP requests
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# RSS feed parsing
+feedparser==6.0.11
+
+# Database
+psycopg2-binary==2.9.9
+
+# Task scheduling
+APScheduler==3.10.4
+
+# Configuration management
+python-dotenv==1.0.1
+pydantic==2.6.1
+pydantic-settings==2.1.0
+
+# Testing
+pytest==8.0.0
+hypothesis==6.98.3
+pytest-mock==3.12.0
+
+# Logging
+colorlog==6.8.2

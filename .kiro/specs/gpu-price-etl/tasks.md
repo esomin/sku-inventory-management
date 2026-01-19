@@ -109,15 +109,15 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 
 ### Phase 3: Python ETL 애플리케이션 개발
 
-- [ ] 4. ETL 프로젝트 설정
-  - [ ] 4.1 Python 프로젝트 구조 생성
+- [x] 4. ETL 프로젝트 설정
+  - [x] 4.1 Python 프로젝트 구조 생성
     - etl/ 디렉토리 생성
     - requirements.txt 작성 (requests, beautifulsoup4, feedparser, psycopg2, apscheduler, python-dotenv)
     - .env 파일 템플릿 작성 (DB 연결 정보, API 키 등)
     - config.py 작성 (설정 관리)
     - _Requirements: 8.1, 8.5, 9.1_
   
-  - [ ] 4.2 데이터베이스 연결 모듈 작성
+  - [x] 4.2 데이터베이스 연결 모듈 작성
     - db_connection.py - PostgreSQL 연결 풀 관리
     - 재시도 로직 구현 (최대 3회)
     - _Requirements: 8.5_
@@ -367,7 +367,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 ### Phase 5: 통합 및 테스트
 
 - [ ] 18. 엔드투엔드 통합
-  - [ ] 18.1 전체 시스템 통합 테스트
+  - [-] 18.1 전체 시스템 통합 테스트
     - PostgreSQL Docker 컨테이너 시작
     - Spring Boot 백엔드 시작
     - Python ETL 스케줄러 시작
