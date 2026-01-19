@@ -134,15 +134,15 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 파싱 정확도 검증
     - _Requirements: 3.1_
 
-- [ ] 6. Extract 모듈 - Reddit 수집기
-  - [ ] 6.1 Reddit RSS 피드 수집기 구현
+- [x] 6. Extract 모듈 - Reddit 수집기
+  - [x] 6.1 Reddit RSS 피드 수집기 구현
     - extractors/reddit_collector.py 작성
     - r/nvidia, r/pcmasterrace RSS 피드 파싱
     - 키워드 필터링: "New Release", "Leak", "Issues", "Price Drop", "Used Market", "5070 release date"
     - Rate limit 핸들링
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
   
-  - [ ] 6.2 Reddit 수집기 테스트
+  - [x] 6.2 Reddit 수집기 테스트
     - RSS 피드 파싱 테스트
     - 키워드 필터링 정확도 검증
     - _Requirements: 4.3, 4.4_
