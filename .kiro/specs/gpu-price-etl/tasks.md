@@ -35,8 +35,8 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 
 ### Phase 1: 백엔드 확장 - GPU 특화 SKU 엔티티
 
-- [ ] 1. 백엔드 SKU 엔티티 확장
-  - [ ] 1.1 SKU 엔티티에 GPU 특화 필드 추가
+- [x] 1. 백엔드 SKU 엔티티 확장
+  - [x] 1.1 SKU 엔티티에 GPU 특화 필드 추가
     - chipset (String) - RTX 4070 시리즈 칩셋명
     - brand (String) - 제조사 (ASUS, MSI, 이엠텍 등)
     - modelName (String) - 라인업명 (TUF, Gaming X, Dual 등)
@@ -44,13 +44,13 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - isOc (Boolean) - 오버클럭 여부
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
   
-  - [ ] 1.2 SKU 엔티티 유효성 검증 추가
+  - [x] 1.2 SKU 엔티티 유효성 검증 추가
     - chipset 필드는 RTX 4070 시리즈만 허용 (4070, 4070 Super, 4070 Ti, 4070 Ti Super)
     - category 필드는 "그래픽카드"로 고정
     - vram 필드는 숫자+단위 형식 검증 (예: "12GB")
     - _Requirements: 1.2, 1.3_
   
-  - [ ] 1.3 데이터베이스 마이그레이션 스크립트 작성
+  - [x] 1.3 데이터베이스 마이그레이션 스크립트 작성
     - 기존 skus 테이블에 컬럼 추가 (chipset, brand, model_name, vram, is_oc)
     - 인덱스 추가 (chipset, brand)
     - _Requirements: 1.1_
