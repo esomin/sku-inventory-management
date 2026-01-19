@@ -35,7 +35,13 @@ public class SKURequestGenerator extends Generator<SKURequest> {
                 category,
                 currentStock,
                 safeStock,
-                dailyConsumptionRate);
+                dailyConsumptionRate,
+                null, // chipset
+                null, // brand
+                null, // modelName
+                null, // vram
+                null // isOc
+        );
     }
 
     private String generateSKUCode(SourceOfRandomness random) {

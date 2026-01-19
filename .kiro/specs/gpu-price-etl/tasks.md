@@ -55,19 +55,19 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 인덱스 추가 (chipset, brand)
     - _Requirements: 1.1_
 
-- [ ] 2. 백엔드 DTO 및 API 확장
-  - [ ] 2.1 SKURequest/SKUResponse DTO 확장
+- [x] 2. 백엔드 DTO 및 API 확장
+  - [x] 2.1 SKURequest/SKUResponse DTO 확장
     - GPU 특화 필드 추가 (chipset, brand, modelName, vram, isOc)
     - 유효성 검증 어노테이션 추가
     - _Requirements: 1.1, 1.2_
   
-  - [ ] 2.2 SKUController API 엔드포인트 확장
+  - [x] 2.2 SKUController API 엔드포인트 확장
     - GET /api/skus?chipset={chipset} - 칩셋별 필터링
     - GET /api/skus?brand={brand} - 브랜드별 필터링
     - GET /api/skus/compare?ids={id1,id2} - 모델 간 비교
     - _Requirements: 13.1, 13.2, 13.5_
   
-  - [ ] 2.3 SKUService 비즈니스 로직 확장
+  - [x] 2.3 SKUService 비즈니스 로직 확장
     - RTX 4070 시리즈 칩셋 검증 로직
     - 모델 간 가격 차이 계산 로직
     - _Requirements: 1.3, 13.4_

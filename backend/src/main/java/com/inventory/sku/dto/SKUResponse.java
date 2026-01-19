@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SKUResponse {
-    
+
     private Long id;
     private String skuCode;
     private String productName;
@@ -22,4 +22,11 @@ public class SKUResponse {
     private LocalDate expectedShortageDate; // 예상 품절일
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    // GPU 특화 필드
+    private String chipset;
+    private String brand;
+    private String modelName;
+    private String vram;
+    private Boolean isOc;
 }
