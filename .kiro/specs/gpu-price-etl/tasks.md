@@ -74,8 +74,8 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 
 ### Phase 2: 데이터베이스 스키마 확장
 
-- [ ] 3. 새로운 테이블 생성
-  - [ ] 3.1 Price_Logs 테이블 생성
+- [x] 3. 새로운 테이블 생성
+  - [x] 3.1 Price_Logs 테이블 생성
     - id (BIGSERIAL PRIMARY KEY)
     - sku_id (BIGINT FOREIGN KEY → skus.id)
     - price (DECIMAL)
@@ -86,7 +86,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 인덱스: (sku_id, recorded_at), (recorded_at)
     - _Requirements: 8.2, 5.1, 5.2_
   
-  - [ ] 3.2 Market_Signals 테이블 생성
+  - [x] 3.2 Market_Signals 테이블 생성
     - id (BIGSERIAL PRIMARY KEY)
     - keyword (VARCHAR) - "New Release", "Price Drop" 등
     - sentiment_score (DECIMAL) - 감성 점수
@@ -97,7 +97,7 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 인덱스: (keyword, date), (date)
     - _Requirements: 8.3, 6.1, 6.2_
   
-  - [ ] 3.3 Risk_Alerts 테이블 생성
+  - [x] 3.3 Risk_Alerts 테이블 생성
     - id (BIGSERIAL PRIMARY KEY)
     - sku_id (BIGINT FOREIGN KEY → skus.id)
     - risk_index (DECIMAL) - 재고 위험 지수
