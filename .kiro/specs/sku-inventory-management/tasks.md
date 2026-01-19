@@ -130,14 +130,14 @@
   - 프로젝트 구조 설정 (components, api, hooks, types)
   - _Requirements: 9.1, 9.2_
 
-- [ ] 9. 프론트엔드 API 클라이언트 구현
-  - [ ] 9.1 TypeScript 타입 정의
+- [x] 9. 프론트엔드 API 클라이언트 구현
+  - [x] 9.1 TypeScript 타입 정의
     - SKURequest 인터페이스
     - SKUResponse 인터페이스
     - PageResponse 인터페이스
     - _Requirements: 2.2_
   
-  - [ ] 9.2 Axios API 클라이언트 작성
+  - [x] 9.2 Axios API 클라이언트 작성
     - skuApi.ts 파일 생성
     - CRUD 메서드 구현 (getAll, getById, create, update, delete)
     - 에러 인터셉터 설정
@@ -184,7 +184,7 @@
   - 개발 서버 실행 및 기능 확인
   - 질문이 있으면 사용자에게 문의
 
-- [ ] 12. 프론트엔드 테스트 작성
+- [ ]* 12. 프론트엔드 테스트 작성
   - [ ]* 12.1 컴포넌트 단위 테스트
     - SearchFilters 컴포넌트 테스트
     - SKUTable 컴포넌트 테스트
