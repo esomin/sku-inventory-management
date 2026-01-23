@@ -209,29 +209,29 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 임계값 검증
     - _Requirements: 7.1, 7.2, 7.3_
 
-- [ ] 11. Load 모듈 - 데이터베이스 적재
-  - [ ] 11.1 Products 테이블 적재 로직
+- [x] 11. Load 모듈 - 데이터베이스 적재
+  - [x] 11.1 Products 테이블 적재 로직
     - loaders/db_loader.py 작성
     - 정규화된 제품 데이터를 Products 테이블에 삽입
     - 중복 체크 (chipset + brand + model_name)
     - _Requirements: 8.1_
   
-  - [ ] 11.2 Price_Logs 테이블 적재 로직
+  - [x] 11.2 Price_Logs 테이블 적재 로직
     - 가격 데이터를 Price_Logs 테이블에 삽입
     - 중복 레코드 처리 (sku_id + recorded_at 기준 UPDATE)
     - _Requirements: 8.2, 8.4_
   
-  - [ ] 11.3 Market_Signals 테이블 적재 로직
+  - [x] 11.3 Market_Signals 테이블 적재 로직
     - Reddit 신호 데이터를 Market_Signals 테이블에 삽입
     - 중복 레코드 처리 (keyword + date 기준 UPDATE)
     - _Requirements: 8.3, 8.4_
   
-  - [ ] 11.4 Risk_Alerts 테이블 적재 로직
+  - [x] 11.4 Risk_Alerts 테이블 적재 로직
     - 위험 지수가 임계값을 초과하는 제품에 대한 알림 생성
     - 알림 메시지 포맷팅 (제품명, 위험 지수, 원인)
     - _Requirements: 12.1, 12.2_
   
-  - [ ] 11.5 데이터 적재 테스트
+  - [x] 11.5 데이터 적재 테스트
     - 각 테이블 삽입/업데이트 테스트
     - 트랜잭션 롤백 테스트
     - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
