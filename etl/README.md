@@ -17,12 +17,27 @@ etl/
 ├── extractors/          # Data extraction modules
 ├── transformers/        # Data transformation and analysis
 ├── loaders/            # Database persistence layer
+├── tests/              # Unit and integration tests
+├── docs/               # Documentation (guides, testing, completion)
 ├── config.py           # Configuration management
 ├── models.py           # Data models
 ├── db_connection.py    # Database connection pool
 ├── requirements.txt    # Python dependencies
 └── .env.template       # Environment variables template
 ```
+
+## Documentation
+
+Comprehensive documentation is available in the `docs/` folder:
+
+- **[Installation Guides](docs/guides/)** - Setup and configuration instructions
+  - [psycopg2 Installation Guide](docs/guides/PSYCOPG2_INSTALLATION_GUIDE.md) - Docker PostgreSQL setup
+- **[Testing Documentation](docs/testing/)** - Testing strategies and examples
+  - [Mock Testing Guide](docs/testing/MOCK_DETAILED_EXPLANATION.md) - Unit testing with mocks
+- **[Completion Summaries](docs/completion/)** - Task completion reports
+  - [Task 8 Summary](docs/completion/TASK_8_COMPLETION_SUMMARY.md) - Price analysis module
+
+See [docs/README.md](docs/README.md) for the complete documentation index.
 
 ## Installation
 
