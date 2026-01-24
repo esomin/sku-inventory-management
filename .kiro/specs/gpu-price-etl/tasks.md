@@ -267,20 +267,20 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
 
 ### Phase 4: 프론트엔드 확장
 
-- [ ] 14. 프론트엔드 API 클라이언트 확장
-  - [ ] 14.1 가격 추이 API 클라이언트 작성
+- [x] 14. 프론트엔드 API 클라이언트 확장
+  - [x] 14.1 가격 추이 API 클라이언트 작성
     - api/priceApi.ts 작성
     - GET /api/price-logs?skuId={id}&startDate={date}&endDate={date}
     - GET /api/price-logs/latest?skuId={id}
     - _Requirements: 10.1, 10.2, 10.3_
   
-  - [ ] 14.2 커뮤니티 신호 API 클라이언트 작성
+  - [x] 14.2 커뮤니티 신호 API 클라이언트 작성
     - api/marketSignalApi.ts 작성
     - GET /api/market-signals?startDate={date}&endDate={date}
     - GET /api/market-signals/trending
     - _Requirements: 11.1, 11.2, 11.3_
   
-  - [ ] 14.3 위험 알림 API 클라이언트 작성
+  - [x] 14.3 위험 알림 API 클라이언트 작성
     - api/riskAlertApi.ts 작성
     - GET /api/risk-alerts?acknowledged={boolean}
     - PUT /api/risk-alerts/{id}/acknowledge
