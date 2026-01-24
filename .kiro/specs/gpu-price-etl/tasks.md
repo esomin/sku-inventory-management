@@ -248,19 +248,19 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - 에러 시나리오 테스트
     - _Requirements: 3.5, 8.5_
 
-- [ ] 13. 스케줄러 구현
-  - [ ] 13.1 APScheduler 설정
+- [x] 13. 스케줄러 구현
+  - [x] 13.1 APScheduler 설정
     - scheduler.py 작성
     - 가격 크롤링 작업: 매일 오전 9시 실행
     - Reddit 수집 작업: 매일 오전 10시 실행
     - _Requirements: 9.1, 9.2_
   
-  - [ ] 13.2 CLI 명령어 구현
+  - [x] 13.2 CLI 명령어 구현
     - 수동 작업 트리거 명령어 (python main.py --task=price_crawl)
     - 스케줄러 시작/중지 명령어
     - _Requirements: 9.4_
   
-  - [ ] 13.3 스케줄러 테스트
+  - [x] 13.3 스케줄러 테스트
     - 스케줄 실행 테스트
     - 작업 실패 시 로깅 검증
     - _Requirements: 9.1, 9.2, 9.3_

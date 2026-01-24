@@ -645,13 +645,17 @@ def main():
     - No arguments: Run full pipeline
     - --task=price_crawl: Run price crawl only
     - --task=reddit_collection: Run Reddit collection only
+    - --task=start_scheduler: Start the scheduler daemon
+    - --task=stop_scheduler: Stop the scheduler daemon (not implemented in CLI)
+    
+    Validates: Requirement 9.4
     """
     import argparse
     
     parser = argparse.ArgumentParser(description='GPU Price Monitoring ETL Pipeline')
     parser.add_argument(
         '--task',
-        choices=['full', 'price_crawl', 'reddit_collection'],
+        choices=['full', 'price_crawl', 'reddit_collection', 'start_scheduler'],
         default='full',
         help='Task to run (default: full)'
     )
@@ -663,14 +667,35 @@ def main():
     try:
         if args.task == 'price_crawl':
             stats = run_price_crawl_only()
+            sys.exit(0 if stats.get('success', False) else 1)
         elif args.task == 'reddit_collection':
             stats = run_reddit_collection_only()
+            sys.exit(0 if stats.get('success', False) else 1)
+        elif args.task == 'start_scheduler':
+            # Import scheduler here to avoid circular dependency
+            from scheduler import ETLScheduler
+            
+            logger.info("Starting scheduler daemon...")
+            scheduler = ETLScheduler()
+            scheduler.schedule_price_crawl()
+            scheduler.schedule_reddit_collection()
+            scheduler.start()
+            
+            # Keep running until interrupted
+            import time
+            try:
+                logger.info("Scheduler is running. Press Ctrl+C to stop.")
+                while True:
+                    time.sleep(1)
+            except (KeyboardInterrupt, SystemExit):
+                logger.info("Received shutdown signal")
+                scheduler.stop()
+                logger.info("Scheduler shutdown complete")
+                sys.exit(0)
         else:
             pipeline = ETLPipeline()
             stats = pipeline.run_full_pipeline()
-        
-        # Exit with appropriate code
-        sys.exit(0 if stats.get('success', False) else 1)
+            sys.exit(0 if stats.get('success', False) else 1)
         
     except Exception as e:
         logger.critical(f"Fatal error in ETL pipeline: {e}", exc_info=True)
