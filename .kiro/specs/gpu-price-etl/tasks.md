@@ -286,18 +286,18 @@ RTX 4070 시리즈 칩셋 리스트를 기준으로 시스템을 구축합니다
     - PUT /api/risk-alerts/{id}/acknowledge
     - _Requirements: 12.3, 12.4_
 
-- [ ] 15. 백엔드 API 엔드포인트 구현
-  - [ ] 15.1 PriceLogController 작성
+- [x] 15. 백엔드 API 엔드포인트 구현
+  - [x] 15.1 PriceLogController 작성
     - GET /api/price-logs - 가격 로그 조회 (필터링, 페이징)
     - GET /api/price-logs/latest - 최신 가격 조회
     - _Requirements: 10.1, 10.2_
   
-  - [ ] 15.2 MarketSignalController 작성
+  - [x] 15.2 MarketSignalController 작성
     - GET /api/market-signals - 커뮤니티 신호 조회 (필터링, 페이징)
     - GET /api/market-signals/trending - 트렌딩 키워드 조회
     - _Requirements: 11.1, 11.2_
   
-  - [ ] 15.3 RiskAlertController 작성
+  - [x] 15.3 RiskAlertController 작성
     - GET /api/risk-alerts - 위험 알림 조회 (필터링, 페이징)
     - PUT /api/risk-alerts/{id}/acknowledge - 알림 확인 처리
     - _Requirements: 12.3, 12.4_
